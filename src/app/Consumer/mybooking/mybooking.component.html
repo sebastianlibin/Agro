@@ -1,0 +1,80 @@
+<div class="booking">
+    <section class="h-100 gradient-custom">
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-8">
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <!-- <h5 class="mb-0">Cart - 2 items</h5> -->
+                </div>
+                <div class="card-body" *ngFor="let b of BookedList">
+                  <!-- Single item -->
+                  <div class="row" >
+                    <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                      <!-- Image -->
+                      <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                        <img [src]='b.fileUrl' class="w-100" />
+                        <a href="#!">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                        </a>
+                      </div>
+                      <!-- Image -->
+                    </div>
+      
+                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                      <!-- Data -->
+                      <p><strong>{{b.Product_Name}}</strong></p>
+                      <p>Quantity: {{b.Quantity}}</p>
+                      <button type="button" class="btn btn-primary btn-sm me-1 mb-3" (click)="cancel(b.Collection_BookingId)" data-mdb-toggle="tooltip"
+                        title="Remove item" >
+                        <!-- (click)="cancel(Collection_BookingId)" -->
+                        <i class="fas fa-trash"></i>
+                      </button>
+                      <!-- Data -->
+                      <div>
+                        <button name="submit" class="btn btn-primary" value="Pay">Pay</button>
+                      </div>
+                    </div>
+      
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                      <!-- Quantity -->
+                      <div class="d-flex mb-4" style="max-width: 300px">
+                        <div class="form-outline">
+                          <label class="form-label" for="form1">Description:</label><br>
+                          {{b.Description}}
+                        </div>
+                      </div>
+                      <!-- Quantity -->
+      
+                      <!-- Price -->
+                      <p class="text-start text-md-center">
+                      Rate <strong> {{ b.Rate}}</strong>
+                      </p>
+                      <!-- Price -->
+                    </div>
+                  </div>
+                  <!-- Single item -->
+                </div>
+              </div>
+              <div class="card mb-4 mb-lg-0">
+                <div class="card-body">
+                  <p><strong>We accept</strong></p>
+                  <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                    alt="Visa" />
+                  <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                    alt="American Express" />
+                  <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                    alt="Mastercard" />
+                  <!-- <img class="me-2" width="45px"
+                    src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
+                    alt="PayPal acceptance mark" /> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</div>

@@ -1,0 +1,58 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+$("#mytable #checkall").click(function () {
+        if ($("#mytable #checkall").is(':checked')) {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", true);
+            });
+
+        } else {
+            $("#mytable input[type=checkbox]").each(function () {
+                $(this).prop("checked", false);
+            });
+        }
+    });
+    
+    $("[data-toggle=tooltip]").tooltip();
+});
+
+</script>
+<div id="main" class="main-class">
+<div class="container">
+	<div class="row">
+		
+        
+        <div class="col-md-12">
+            <button class=" button btn btn-primary" [routerLink]="['/Adminmaster/Category']">Add New</button>
+        <h4 align="center">Category Details </h4><br><br>
+        <div class="table-responsive">
+
+                
+              <table id="mytable" class="table table-bordred table-striped" *ngIf="categoryList">
+                   
+                   <thead>
+                   
+                   <!-- <th><input type="checkbox" id="checkall" /></th> -->
+                   <th>Sl.No</th>
+                    <th>Category Name</th>
+                     <th>Discription</th>
+                       <th>Delete</th>
+                   </thead>
+    <tbody>
+    
+    <tr *ngFor="let c of categoryList;let i=index">
+    <!-- <td><input type="checkbox" class="checkthis" /></td> -->
+    <td>{{i+1}}</td>
+    <td>{{c.Category}}</td>
+    <td>{{c.Description}}</td>
+    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Reject" data-toggle="modal" data-target="#delete" >Remove</button></p></td>
+    </tr>
+      <!-- /.modal-dialog --> 
+    </tbody>

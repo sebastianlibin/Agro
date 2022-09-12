@@ -1,0 +1,92 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/Admin/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/assets/Admin/plugins/summernote/summernote-bs4.min.css">
+</head>
+<div class="main">
+   <div class="card card-primary card-outline direct-chat direct-chat-primary">
+      <div class="card-header">
+        <h3 class="card-title">Direct Chat</h3>
+  
+        <div class="card-tools">
+          <span title="3 New Messages" class="badge bg-primary">3</span>
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
+            <i class="fas fa-comments"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <!-- Conversations are loaded here -->
+        <div class="direct-chat-messages">
+          <!-- Message. Default to the left -->
+          <div class="sidebar">
+            <div class="direct-chat-msg" *ngFor="let c of ChatList">
+              <div class="direct-chat-infos clearfix">
+                <span class="direct-chat-timestamp float-right">{{c.ChatDate}}</span>
+              </div>
+              <!-- /.direct-chat-infos -->
+              <!-- /.direct-chat-img -->
+              <div class="direct-chat-text">
+                {{c.chat}}
+              </div>
+              <!-- /.direct-chat-text -->
+            </div>
+            <!-- /.direct-chat-msg -->
+    
+            <!-- Message to the right -->
+            <div class="direct-chat-msg right" *ngFor="let s of senderList">
+              <!-- *ngFor="let r of recieveList" -->
+              <div class="direct-chat-infos clearfix">
+                <span class="direct-chat-name float-left">{{s.ChatDate}}</span>
+              </div>
+              <!-- /.direct-chat-infos -->
+              <!-- /.direct-chat-img -->
+              <div class="direct-chat-text">
+                {{s.chat}}
+              </div>
+              <!-- /.direct-chat-text -->
+            </div>
+          </div>
+          <!-- /.direct-chat-msg -->
+        </div>
+        <!--/.direct-chat-messages-->
+  
+        <!-- Contacts are loaded here -->
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <form [formGroup]="ChatForm">
+          <div class="input-group">
+            <input type="text" name="message" formControlName="chat" placeholder="Type Message ..." class="form-control">
+            <span class="input-group-append">
+              <button type="submit" class="btn btn-primary" (click)="chat()" >Send</button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <!-- /.card-footer-->
+    </div>
+  </div>

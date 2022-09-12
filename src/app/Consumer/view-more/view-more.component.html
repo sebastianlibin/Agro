@@ -1,0 +1,50 @@
+
+<br><br><br><br><br><br>
+
+<div class="viewmore" *ngFor="let p of productlist;">
+	<section class="product">
+		<div class="product__photo">
+			<div class="photo-container">
+				<div class="photo-main">
+					<div class="controls">
+						<i class="material-icons">share</i>
+						<i class="material-icons">favorite_border</i>
+					</div>
+					<img  [src]='p.fileUrl'>
+					<div class="details" *ngFor="let f of FarmerList;">
+						<h3 style="text-align:center ; color:aliceblue">Farmer Details</h3>
+						<h4 style="text-align:center;color:rgb(182, 202, 218)">{{f.Firstname }}  {{ f.Lastname }}</h4>
+						<h4 style="text-align:center;color:rgb(174, 192, 208)">{{f.Contact_Number }}</h4>
+					</div>
+				</div>
+				<!-- <div class="photo-album" >
+					<ul>
+						
+					</ul>
+				</div> -->
+			</div>
+		</div>
+		<form [formGroup]="viewmoreform">
+			<input type="hidden" formControlName="FId">
+		<div class="product__info">
+			<div class="title">
+				<h1>{{p.Product_Name}}</h1>
+			</div>
+			<div class="price">
+				Rs <span>{{p.Rate}}</span>
+			</div>
+			<div class="description">
+				<u><h4>Details</h4></u>
+				<ul>
+					<h4>{{p.Quantity}}</h4>
+					<h4>{{p.Category}}</h4>
+					<h4>{{p.Description}}</h4>
+				</ul>
+			</div>
+			<button class="btn btn-info" [routerLink]="['/Master/ConsumerChat',p.FId]">Message</button>
+			<button class="btn btn-warning" (click)="book()"> Book Product</button>
+			<!-- [routerLink]="['/Master/Mybooking',p.Collection_ProductId]" -->
+		</div>
+		</form>
+	</section>
+</div> 

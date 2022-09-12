@@ -1,0 +1,91 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/Admin/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/summernote/summernote-bs4.min.css">
+</head>
+<div class="main">
+<div class="card card-primary">
+    <div class="card-header">
+      <h1 class="card-title" >Update Your Product </h1>
+    </div>
+    <form [formGroup]="EditProductForm">
+       <div class="card-body">
+        <div>
+            <div class="right">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Product Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="Product_Name" placeholder="Enter Product">
+                  </div>
+            </div>
+            <div class="left">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" >Category</label>
+                    <select class="form-control" formControlName="Category">
+                      <option value="">----Select Catergory----</option>
+                      <option *ngFor="let c of CategoryList" value="{{c.Category}}">{{c.Category}}</option>
+                    </select>
+                  </div>
+            </div>
+        </div>
+        <div>
+            <div class="right">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Quantity</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="Quantity" placeholder="Enter Quantity">
+                  </div>
+            </div>
+            <div class="left">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Rate</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="Rate" placeholder="Enter Rate">
+                  </div>
+            </div>
+        </div>
+        <div>
+        </div>
+        <div>
+            <div class="right">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Description</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="Description" placeholder="Enter Description">
+                  </div>
+            </div>
+            <!-- <div class="left">
+                <div class="form-group">
+                    <label for="exampleInputFile">Image input</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="" (change)="handleFileInput($event)">
+                        <label  for="">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+            </div> -->
+                       
+        </div>
+        <div class="left">
+        <label  for="">Product Image</label>
+        <input class="form-control" type="file" name="fileup"  (change)="handleFileInput($event)">
+      </div>
+       </div> 
+       <div class="card-footer">
+        <button type="submit" class="btn btn-primary"  (click)="AddProduct()">Submit</button>
+      </div>
+    </form>
+  </div>

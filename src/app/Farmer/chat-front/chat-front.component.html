@@ -1,0 +1,57 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/assets/Admin/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/assets/Admin/plugins/summernote/summernote-bs4.min.css">
+</head>
+<!-- <div class="contact">
+    
+</div> -->
+<div class="main">
+  <form [formGroup]="chatform">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+          <h3 class="card-title">Inbox</h3>
+
+          <!-- /.card-tools -->
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          <div class="mailbox-controls">
+            <!-- /.float-right -->
+          </div>
+          <div class="table-responsive mailbox-messages">
+            <table class="table table-hover table-striped" *ngFor="let c of senderList">
+              <tbody>
+              <tr>
+                <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                <td class="mailbox-name"><a [routerLink]="['../Chat',c.SenderId]">{{c.Name}}</a></td>
+                <td class="mailbox-attachment"></td>
+                <td class="mailbox-date">{{c.ChatDate}}</td>
+              </tr>
+            </tbody>
+            </table>
+              <input type="hidden" formControlName="Senderid">
+            <!-- /.table -->
+          </div>
+          <!-- /.mail-box-messages -->
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </form>
+</div>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="/assets/Guest/images/favicon.png" type="">
+
+  <title> Agro </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/assets/Guest/css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="/assets/Guest/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/assets/Guest/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/assets/Guest/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="/assets/Guest/images/hero-bg.jpg" alt="Once upon a tym">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Agro
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Guset/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/Registration']">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="!appUser" (click)="Login()">Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>
+                        “What you plant now,you will harvest later!.”
+                    </h1>
+                    <p>
+                        
+                    </p>
+                    <div class="btn-box">
+                      <a href="products" class="btn1">
+                        Products
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+        </div>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- offer section -->
+
+  
+  <!-- end offer section -->
+
+  <!-- food section -->
+
+  <section class="food_section layout_padding-bottom">
+    <div id="products" class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Products
+        </h2>
+      </div>
+      <div class="filters-content">
+        <div class="row grid">
+          <div class="col-sm-6 col-lg-4 all pizza" *ngFor="let p of ProductList">
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img [src]='p.fileUrl' alt="" height="450px" wight="1200px">
+                </div>
+                <div class="detail-box">
+                  <h5 style="text-align: center;">
+                    {{p.Product_Name}}
+                  </h5>
+                  <p style="text-align: center;">
+                    Rs {{p.Rate}}
+                  </p>
+                  <p style="text-align: center;">
+                    {{p.Description}}
+                  </p>
+                  <!-- <div class="options"> -->
+                    
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+      </div>
+    </div>
+  </section>
+
+  <!-- end food section -->
+
+  <!-- about section -->
+
+   <section class="about_section layout_padding">
+    <div id="about" class="container  ">
+
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="/assets/Guest/images/about-img.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                We Are Agro
+              </h2>
+            </div>
+            <p>
+                Agricultural marketing covers the services involved in moving an agricultural product from the farm to the consumer. These services involve the planning, organizing, directing and handling of agricultural produce in such a way as to satisfy farmers, intermediaries and consumers. Numerous interconnected activities are involved in doing this, such as planning production, growing and harvesting, grading, packing and packaging, transport, storage, agro- and food processing, provision of market information, distribution, advertising and sale. Effectively, the term encompasses the entire range of supply chain operations for agricultural products, whether conducted through ad hoc sales or through a more integrated chain, such as one involving contract farming.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+  <!-- book section -->
+  <section class="vh-125" >
+  </section>
+  
+  <!-- end book section -->
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              Contact Us
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 9188198497
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  libinsebastian171@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              Agro
+            </a>
+            <p>
+              Beginning the era of Industrian Revolution
+            </p>
+            <div class="footer_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Opening Hours
+          </h4>
+          <p>
+            Everyday
+          </p>
+          <p>
+            10.00 Am -10.00 Pm
+          </p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">And</a><br><br>
+          &copy; <span id="displayYear"></span> Developed By
+          <a href="https://themewagon.com/" target="_blank">Ls</a><br>
+          <a href="#" [routerLink]="['/Login']">Farmer Login</a><br>
+          <a href="#" [routerLink]="['/AdminLogin']">Admin Login</a><br>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- End Google Map -->
+
+</body>
+
+</html>
+ 
