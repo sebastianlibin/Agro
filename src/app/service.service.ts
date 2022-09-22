@@ -300,7 +300,7 @@ this.checkconsumer(res.user.uid).subscribe((result:any)=>{
     .valueChanges(); 
     return sender;
   }
-
+ 
   sendersList1(FarmerId:any)
   {
     return new Promise<any[]>((resolve, reject) => {
@@ -394,4 +394,8 @@ this.checkconsumer(res.user.uid).subscribe((result:any)=>{
     return Sender;
   }
 
+  order(PId:any){
+    const sender = this.afs.doc<any>("Collection_Product/"+ PId).valueChanges(); 
+    return sender;
+  }
 }

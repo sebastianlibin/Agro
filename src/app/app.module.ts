@@ -40,6 +40,7 @@ import { StatusViewComponent } from './Admin/status-view/status-view.component';
 import { ChatFrontComponent } from './Farmer/chat-front/chat-front.component';
 import { ConsumerChatComponent } from './Consumer/consumer-chat/consumer-chat.component';
 import { MybookingComponent } from './Consumer/mybooking/mybooking.component';
+import { OrderComponent } from './Consumer/order/order.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { MybookingComponent } from './Consumer/mybooking/mybooking.component';
     ChatFrontComponent,
     ConsumerChatComponent,
     MybookingComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
